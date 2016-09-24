@@ -218,7 +218,7 @@
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#dropdown">
 					<i class="fa fa-bars fa-2x"></i>
 				</button>
-				<a href="#"><img src='img/mobius2.png' alt='Wimbletim' /></a><a class="navbar-brand" href="#">TIMOTHY WOJTYLAK<span>WEB DESIGNER & DEVELOPER</span></a>
+				<a href="#"><img src='img/mobius2.png' alt='Wimbletim' /></a><a class="navbar-brand" href="#">TIMOTHY WOJTYLAK<span style="padding-left: 2px;">FULL STACK WEB DEVELOPER</span></a>
 			</div>
 		
 			<div class="navbar-collapse collapse" id="myNavbar">
@@ -247,8 +247,7 @@
 			<div class='col-sm-3'></div>
 			<div class='col-sm-6'>
 				<h1>Websites done your way.</h1>
-				<p>My name is Timothy Wojtylak and I'm a web developer from Orlando, Florida. I enjoy building everything from small business sites to rich interactive web apps. 
-				I have a diverse set of skills ranging from HTML5/CSS3 and Javascript to PHP and database design. If you are seeking a web presence or an employer looking to hire, you can get in touch with me <a href="#contact">here.</a></p>
+				<p>My name is Timothy Wojtylak and I'm a full stack web developer from Windermere, Florida. I enjoy building everything from small business sites to rich interactive web apps and everything in between. I have a diverse set of skills ranging from HTML5/CSS3, Javascript, and Angular to PHP, Laravel, and MySQL. If you are seeking a web presence or are an employer looking to hire, you can get in touch with me <a href="#contact">here.</a></p>
 			</div>
 			<div class='col-sm-3'></div>
 		</div>
@@ -280,29 +279,34 @@
 				<div class="row">
 					<div class='col-sm-6'>
 						<i class="fa fa-code"></i>
-						<h1>Front End</h1>
+						<h1>Front-End</h1>
 						<p>HTML5/CSS3, SASS, Javascript (jQuery & AJAX), Meteor.js, XML, Gulp</p>
 					</div>
 					
 					<div class='col-sm-6'>
-						<i class="fa fa-mobile"></i>
-						<h1>Responsive Design</h1>
-						<p>Cross-device mobile design and development for new and existing sites using Twitter Bootstrap</p>
+						<i class="fa fa-database"></i>
+						<h1>Back-End</h1>
+						<p>PHP, CodeIgniter 3, Laravel 5, MySQL, MongoDB</p>
 					</div>
 				</div>
 			</div>
 			<div class='col-lg-4'>
 				<div class="row">
 					<div class='col-sm-6'>
+							<i class="fa fa-mobile"></i>
+							<h1>Responsive Design</h1>
+							<p>Cross-device mobile design and development for new and existing sites using Twitter Bootstrap</p>
+						</div>
+					<!-- <div class='col-sm-6'>
 						<i class="fa fa-database"></i>
 						<h1>Server-side</h1>
-						<p>PHP, MySQL, MongoDB, FTP, WAMP/LAMP, Web/Database Migration, Database Normalization</p>
-					</div>
+						<p>PHP, MySQL, MongoDB, WAMP/LAMP, Web/Database Migration, Database Normalization</p>
+					</div> -->
 					
 					<div class='col-sm-6'>
 						<i class="fa fa-tasks"></i>
-						<h1>Software</h1>
-						<p>Visual Studio, Photoshop, InDesign, Illustrator</p>
+						<h1>Server</h1>
+						<p>WAMP/LAMP, Git, Ionic, Google Maps API, Google Cloud Platform</p>
 					</div>
 				</div>
 			</div>
@@ -321,43 +325,12 @@
 			<div class='col-lg-4'></div>
 		</div>
 
-		<!-- <div class="row sp">
-			<div class="col-lg-2"></div>
-            <div class="col-lg-4 col-lg-push-4">
-				<h1><a href="http://www.wimbletim.com/projects/bw.html">Blakenwite</a></h1>
-				<p>Blakenwite started off as a project to help me learn how to create jQuery plugins and how github and version control work. 
-				It started off small and has grown into something I take a huge amount of pride in. It continues to grow and be developed.</p>
-
-				<p>It basically greyscales whatever you tell it to, from single elements to entire webpages.</p>
-
-				<button id='tryme'>Try Me!</button>
-
-				<a class='githubLink' href='https://github.com/wojo1086/BW.git'>Check it out on Github! <i class="fa fa-github"></i></a>
-				
-				
-			</div>
-            
-            <div class="col-lg-4 col-lg-pull-4">
-	            <div id='bw-wrapper'>
-					<div class='ring1'>
-						<div class='ring2'>
-							<div class='ring3'>
-								<div class='ring4'>
-						
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3"></div>
-		</div> -->
 
 		<div class="row sol">
 			<div class="col-lg-2"></div>
 			<div class="col-lg-4">
 				<h1><a href="https://www.mygspn.com">myGSPN</a></h1>
-				<p>I was appraoched by a friend of mine saying his grandparents would like a wesbite for their dry cleaning business here in Orlando. I told him it wouldn't be a problem and was able to build it in about 4 hours. It's also mobile friendly.</p>
+				<p>myGSPN is a mobile and web application whose purpose is two-fold. First, it is a social network that aims to bring people of all sport levels together. Second, it provides tools for schools and sports teams to help them manage things like their roster and schedule. On the desktop, it is written using Angular for the front-end framework and CodIgniter 3 as the back-end framework. It utilizes a custom token system to connect to the API. The mobile app was created with Ionic.</p>
 				
 				<div class="langs">
 					<span>HTML5</span>
@@ -385,15 +358,16 @@
 			<div class="col-lg-2"></div>
             <div class="col-lg-4 col-lg-push-4">
 				<h1><a href="http://www.plainbudget.com">Plain Budget</a></h1>
-				<p>Plain Budget started out as a small application I made to help me budget. I realized other people might also want to use it, so I turned it into a full-fledged
-				website. It is still under development, but the core functionality is there.</p>
+				<p>Plain Budget started out as a small application I made to help me budget. I realized other people might also want to use it, so I'm turning it into a full-fledged
+				web application. It uses Angular for the front-end framework and JSON web tokens to connect to the Laravel API.</p>
 				
 				<div class="langs">
 					<span>HTML5</span>
 					<span>CSS3</span>
 					<span>JQuery</span>
 					<span>Angular</span>
-					<span>Laravel 5.2</span>
+					<span>Laravel 5</span>
+					<span>JSON Web Tokens</span>
 					<span>MySQL</span>
 					<span>UI Router</span>
 					<span>Lazy Load</span>
@@ -639,7 +613,7 @@
 			"elementType": "labels.icon"  }
 		]
 		var image = 'img/mapMarker.png';
-		var myLatlng = new google.maps.LatLng(28.37365,-81.50185);
+		var myLatlng = new google.maps.LatLng(28.4953320,-81.5934430);
 		var styledMap = new google.maps.StyledMapType(styles,
 			{name: "Styled Map"});
 		
@@ -666,7 +640,7 @@
 		  });
 
 		var infowindow = new google.maps.InfoWindow({
-			content:"Orlando, FL"
+			content:"Windermere, FL"
 		});
 
 		infowindow.open(map,marker);
