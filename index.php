@@ -353,6 +353,28 @@
 			<div class="col-lg-3"></div>
 		</div> -->
 
+		<div class="row sp">
+			<div class="col-lg-2"></div>
+            <div class="col-lg-4 col-lg-push-4">
+				<h1><a href="https://www.mygspn.com">myGSPN</a></h1>
+				<p>I made a website a while back for a young lady striving to be a freelance writer. Recently, I decided to redesign the site to make it more modern. I ended up only redesigning the home page. The site consists of live pull of her blogfeed using PHP and a backend administration page where she is able to utilize a text editor to write her content.</p>
+				
+				<div class="langs">
+					<span>HTML5</span>
+					<span>CSS3</span>
+					<span>Javascript</span>
+					<span>jQuery</span>
+					<span>Bootstrap 3</span>
+					<span>PHP</span>
+				</div>
+			</div>
+            
+            <div class="col-lg-4 col-lg-pull-4">
+				<a href="https://www.mygspn.com"><img src="img/mygspn.png" alt='myGSPN' /></a>
+			</div>
+			<div class="col-lg-3"></div>
+		</div>
+
 		<div class="row sol">
 			<div class="col-lg-2"></div>
 			<div class="col-lg-4">
