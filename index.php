@@ -550,7 +550,7 @@
 <script type="text/javascript" src="loadCSS-master/src/loadCSS.js"></script>
 <script type="text/javascript" src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="projects/bw/bw.js"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCMfpOoE7j2uZ9K8it2KvYZjNjktJ0xJ8"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2HK7NirYMB-UGuLXTEuJr5PAk_MHwVYY"></script>
 <script>
 	loadCSS( "css/main.min.css" );
 	loadCSS( "font-awesome/css/font-awesome.min.css" );
