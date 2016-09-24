@@ -1,0 +1,117 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+*, html, body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans';
+}
+html, body {
+	height: 100%;
+}
+#bodyWrapper {
+	background-color: rgba(30, 144, 255, .1);
+}
+#main {
+	width: 1000px;
+	margin: auto auto;
+	padding: 50px 15px;
+	border-right: 1px solid #EFEFEF;
+	border-left: 1px solid #EFEFEF;
+	background-color: #FFFFFF;
+}
+h1 {
+	color: #1E90FF;
+	font-size: 50px;
+}
+h1 span {
+	color: #666666;
+	font-size: 12px;
+}
+h4 {
+	color: #444444;
+	padding-left: 10px;
+}
+h3 {
+	margin-top: 30px;
+	font-size: 30px;
+	color: #444444;
+}
+p {
+	font-size: 14px;
+	color: #444444;
+	padding: 20px 5px 0 10px;
+	font-weight: 600;
+	line-height: 150%;
+}
+h1 button {
+	float: right;}
+button{
+	margin-top: 20px;
+	padding: 8px 12px;
+	background-color: #1E90FF;
+	border: 1px solid #0E80EF;
+	color: #FFFFFF;
+}
+button:hover {
+	cursor: pointer;
+}
+textarea {
+	resize: none;
+	width: 100%;
+	margin-top: 10px;
+	background-color: #FFFFF1;
+	font-weight: 500;
+}
+table {
+	width: 100%;
+	margin-top: 30px;
+	text-align: center;
+	border: 1px solid #DFDFDF;
+	padding: 10px 0;
+}
+table.exampleTable1 td {
+	width: 50%;
+}
+ol {
+	width: 90%;
+	margin: 20px 0 0 30px;
+}
+ol li {
+	font-size: 13px;
+	font-weight: 600;
+	color: #666666;
+}
+table.methodTable {
+	padding: 0;
+	border-collapse: collapse;
+}
+table.methodTable td {
+	border: 1px solid #DFDFDF;
+}
+table.methodTable th {
+	background: #FAFAFA;
+}
+table.methodTable th:first-child {
+	border-right: 1px solid #DFDFDF;
+}
+table.methodTable td:first-child {
+	width: 30%;
+	color: #444444;
+	font-weight: 600;
+}
+table.methodTable td:nth-child(2) {
+	color: #444444;
+	font-size: 13px;
+	font-weight: 600;
+	padding: 20px 15px;
+}
+table.methodTable td:nth-child(2) span {
+	color: #1E90FF;
+	font-size: 13px;
+	font-weight: 600;
+}
+#someDiv5 p {
+	margin: 0 auto 0 auto;
+	width: 80px;
+	color: rgba(0,0,255,1);
+	font-size: 12px;
+}

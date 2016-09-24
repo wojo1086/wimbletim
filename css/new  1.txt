@@ -1,0 +1,190 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;}
+html, body {
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;}
+#myCanvas {
+	z-index: -1;
+	position: relative;}
+#aboutMe {
+	position: absolute;
+	width: 500px;
+	top: 40%;
+	left: 49%;
+	text-align: center;
+	margin-left: -250px;
+	margin-top: -250px;}
+#aboutMe h1 {
+	font-size: 88px;
+	/*text-shadow: 1px 1px #000000;*/
+	color: rgb(68, 68, 68);
+	font-weight: 300;}
+#aboutMe p {
+	margin-top: 20px;
+	color: rgb(68, 68, 68);
+	font-size: 17px;
+	line-height: 150%;
+	font-weight: 400;}
+#aboutMe img {
+	margin-top: 20px;}
+#aboutMe i {
+	margin: 20px 5px 0 5px;
+	color: rgb(68, 68, 68);}
+#topNav {
+	z-index: 1;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;}
+#topNav ul {
+	list-style-type: none;
+	max-width: 500px;
+	overflow: hidden;
+	margin: auto auto;}
+#topNav ul li {
+	float: left;
+	border-top: 1px solid rgb(68, 68, 68);
+	display: inline-block;}
+#topNav ul li a {
+	text-decoration: none;
+	color: rgb(68, 68, 68);
+	display: block;
+	border: none;
+	font-weight: 600;
+	font-size: 16px;
+	margin: 0 10px 0 10px;
+	/*text-shadow: 1px 1px 1px #444444;*/
+	padding: 20px 5px 30px 5px;
+	border-top: 3px solid rgba(68, 68, 68, 0);}
+#topNav ul li a:hover {
+	border-top: 3px solid rgba(68, 68, 68, 1);}
+#section0 {
+	position: relative;}
+#aboutProjects {
+	max-width: 800px;
+	margin: auto auto;}
+#section1 {
+	position: relative;
+	color: #222222;
+	text-align: center;
+	background-image: url('../img/office-light.png');
+	background-size: cover;
+	background-position: center left;
+	margin-top: -25px;}
+#section1 h2 {
+	font-weight: 300;
+	padding: 150px 0 20px 0;
+	font-size: 60px;}
+#aboutProjects p {
+	font-size: 17px;
+	line-height: 150%;
+	padding: 20px 0 100px 0;
+	font-weight: 400;}
+#section3 {
+	position: relative;
+	overflow: hidden;
+	padding-top: 100px;}
+#projectTableContainer {
+	max-width: 1000px;
+	overflow: hidden;
+	margin: auto auto;}
+.projectTable {
+	width: 100%;
+	padding-bottom: 100px;
+	overflow: hidden;}
+#leftPic1 {
+	width: 50%;
+	margin-top: 10px;
+	float: left;}
+#leftPic2 {
+	width: 50%;
+	margin-top: 10px;
+	float: left;}
+#projectDescription {
+	width: 50%;
+	float: left;}
+#projectDescription h1 {
+	font-weight: 700;
+	font-size: 40px;}
+#projectDescription a {
+	text-decoration: none;
+	transition: color .5s;
+	color: #303030;}
+#projectDescription a:hover {
+	color: #1E90FF;
+	transition: color .5s;}
+#projectDescription p {
+	color: #505050;
+	font-size: 14px;
+	line-height: 200%;
+	margin-top: 15px;
+	padding-bottom: 20px;}
+#projectDescription span {
+	color: #FFFFFF;
+	background-color: #1E90FF;
+	padding: 6px 8px 6px 8px;
+	display: inline-block;
+	margin: 5px 5px 0 0;
+	font-size: 13px;
+	border-radius: 4px;}
+#map-canvas {
+	height: 350px;
+	border-top: 1px solid #EFEFEF;
+	border-bottom: 1px solid #EFEFEF;
+	margin-top: 100px;
+	z-index: -1;}
+#section4 {
+	position: relative;}
+#section4Container {
+	max-width: 900px;
+	margin: auto auto;}
+#contactNumber {
+	width: 30%;
+	margin-top: -80px;
+	float: left;}
+#section4Container h3 {
+	background: #1E90FF;
+	font-weight: 400;
+	font-size: 18px;
+	display: inline-block;
+	border-radius: 20px;
+	padding: 20px;
+	color: #FFFFFF;}
+#section4Container span {
+	border: 20px solid #FFFFFF;
+	display: inline-block;
+	background-color: #FFFFFF;
+	border-radius: 20px;
+	text-align: center;
+	z-index: 100;
+	overflow: hidden;}
+#section4Container span i {
+	margin: 25px 5px 0 5px;
+	font-size: 18px;
+	color: #1E90FF;}
+#contactForm {
+	width: 70%;
+	float: left;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 50px;}
+footer {
+	position: relative;
+	clear: both;
+	margin-top: 50px;
+	display: block;
+	text-align: center;
+	background-color: #E4E4E4;
+	width: 100%;}
+footer ul {
+	padding: 50px 0;}
+footer ul li {
+	list-style-type: none;
+	margin: 0 15px;
+	font-size: 12px;
+	color: #444444;
+	display: inline;}
+footer ul li a {
+	color: #444444;}

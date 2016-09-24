@@ -1,0 +1,271 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sky</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+<link rel="icon" href="../favicon.ico" type="image/x-icon">
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+<script>
+	var windowHeight = $(window).height();//Get window height
+	var windowWidth = $(window).width();//Get window width
+	var topr, topg, topb, botr, botg, botb, c, moonX, moonY, sunX, sunY, frameRate;//Declaring global variables
+	
+	var starCount = Math.floor(Math.random() * (windowHeight/20) + 50);//Generate a random number of stars
+	var plane = new Image();////// \/ \/ \/ \/ \/ \/ \/
+	plane.src = '../img/plane.png';//Assign the plane image to a variable
+	var px = windowWidth + 100;//Give the plane a starting x position
+	var planeAlive = false;
+	
+	
+	var starArray = new Array();//Create the array to hold the star objects
+	//////////////The star object
+	function star(x, y, z)
+	{
+		this.starX = x;//Star's x position
+		this.starY = y;//Star's y position
+		this.bright = z;//Star's brightness
+	}
+	////////////////////////////
+	for(var k=0.5; k>0; k-=0.1)
+	{
+		for(var i=0; i<starCount; i++)
+		{
+				var tempX = Math.floor(Math.random() * windowWidth + 1);
+				var tempY = Math.ceil(Math.random() * (windowHeight * k) -3);
+				var brightness = Math.random();
+				starArray.push(new star(tempX, tempY, brightness));
+		}
+	}
+	  
+</script>
+</head>
+<body style="margin: 0; padding: 0; overflow: hidden;">
+	<canvas id='myCanvas'></canvas>
+	
+<script>
+$(function(){
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext('2d');
+	ctx.canvas.width = windowWidth;
+	ctx.canvas.height = windowHeight;
+	updateCanvas();
+	var intervalID = window.setInterval(updateCanvas, frameRate);
+
+	function updateCanvas(){
+		var dt = new Date();
+		c = document.getElementById("myCanvas");
+		var ctx = c.getContext("2d");
+		
+		
+		if (dt.getHours() == 19){
+			topr = 0;
+			topg = 191 - Math.ceil(3.16 * dt.getMinutes());
+			topb = 255 - Math.ceil(3.97 * dt.getMinutes());
+			botr = 173 - Math.ceil(2.88 * dt.getMinutes());
+			botg = 216 - Math.ceil(3.55 * dt.getMinutes());
+			botb = 230 - Math.ceil(2.98 * dt.getMinutes());
+			drawBackground(ctx, topr, topg, topb, botr, botg, botb);
+			drawStars(ctx);
+			var font = 68+Math.ceil(dt.getMinutes() * 1.7);
+			changeFont(font);
+			frameRate = 200;
+		}
+		
+		if (dt.getHours() == 7){
+			topr = 0;
+			topg = 1 + Math.ceil(3.16 * dt.getMinutes());
+			topb = 17 + Math.ceil(3.97 * dt.getMinutes());
+			botr = 0 + Math.ceil(2.88 * dt.getMinutes());
+			botg = 3 + Math.ceil(3.55 * dt.getMinutes());
+			botb = 51 + Math.ceil(2.98 * dt.getMinutes());
+			drawBackground(ctx, topr, topg, topb, botr, botg, botb);
+			var font = 170-Math.ceil(dt.getMinutes() * 1.7);
+			changeFont(font);
+			frameRate = 50;
+		}
+		
+		if (dt.getHours() > 19 || dt.getHours() < 7){
+			topr = 0;
+			topg = 1;
+			topb = 17;
+			botr = 0;
+			botg = 3;
+			botb = 51;
+			frameRate = 200;
+			drawBackground(ctx, topr, topg, topb, botr, botg, botb);
+			drawStars(ctx);
+			//Position the moon accroding to the time of day
+			if (dt.getHours() > 19 || dt.getHours() == 0){//For the second half of the day....until 12 midnight..it should be at peak at midnight
+				if (dt.getHours() == 0){
+					moonX = Math.ceil((c.width+27) - (((c.width/2)+27)/299) * (240 + dt.getMinutes()));
+					moonY = Math.ceil((c.height/2) - (c.height * 0.00167 * (240 + dt.getMinutes())));
+				}else{
+					moonX = Math.ceil((c.width+27) - (((c.width/2)+27)/240) * (((dt.getHours() - 20) * 60) + dt.getMinutes()));
+					moonY = Math.ceil((c.height/2) - ((c.height * 0.00167 * (((dt.getHours() - 20) * 60) + dt.getMinutes()))));
+				}
+				
+			}else{
+				moonX = Math.ceil((c.width/2) - (((c.width/2)-27)/360) * (((dt.getHours() - 1) * 60) + dt.getMinutes()));
+				var pH = (c.height/2) - ((c.height * 0.00167 * 299));
+				var pHDelta = (c.height * 0.00111 * (((dt.getHours() - 1) * 60) + dt.getMinutes()));
+				moonY = Math.ceil(pH + pHDelta);
+			}
+			drawMoon(ctx);
+			
+			var font = 170;
+		}
+		
+		if (dt.getHours() > 7 && dt.getHours() < 19){
+			topr = 0;
+			topg = 191;
+			topb = 255;
+			botr = 173;
+			botg = 216;
+			botb = 230;
+			frameRate = 50;
+			drawBackground(ctx, topr, topg, topb, botr, botg, botb);
+			
+			//Position the sun accroding to the time of day
+			if (dt.getHours() > 7 && dt.getHours() < 13){//For the first half of the day....until 12 noon..it should be at peak at noon
+				sunX = Math.ceil((c.width+39) - (((c.width/2)+39)/299) * (((dt.getHours() - 8) * 60) + dt.getMinutes()));
+				sunY = Math.ceil((c.height/2) - ((c.height * 0.00167 * (((dt.getHours() - 8) * 60) + dt.getMinutes()))));
+			}else{
+				sunX = Math.ceil((c.width/2) - (((c.width/2)-39)/419) * (((dt.getHours() - 13) * 60) + dt.getMinutes()));
+				var pH = (c.height/2) - ((c.height * 0.00167 * 299));
+				var pHDelta = (c.height * 0.00111 * (((dt.getHours() - 13) * 60) + dt.getMinutes()));
+				sunY = Math.ceil(pH + pHDelta);
+			}
+			drawSun(ctx);
+			
+			if (planeAlive == false)
+			{
+				var decidePlane = Math.random();
+				if (decidePlane > 0.99)
+				{
+					ctx.drawImage(plane, px, 100);
+					planeAlive = true;
+				}
+			}else{
+				if (px > -100)
+				{
+					ctx.drawImage(plane, px, 100);
+					px -= 2;
+				}else {
+					px = c.width + 100;
+					planeAlive = false;
+				}
+			}
+			var font = 68;
+			
+		}	
+	}
+	
+	
+	function drawBackground(ctx, topr, topg, topb, botr, botg, botb){
+		// Create gradient
+		var grd = ctx.createLinearGradient(0,0,0,windowHeight);
+		grd.addColorStop(0,'rgb('+topr+','+topg+','+topb+')');
+		grd.addColorStop(1,'rgb('+botr+','+botg+','+botb+')');
+		
+
+		// Fill with gradient
+		ctx.fillStyle = grd;
+		ctx.fillRect(0,0,windowWidth,windowHeight);
+	}
+	
+	function drawStars(ctx){	
+		for(var i=0; i < starArray.length; i++)
+		{
+			ctx.fillStyle = "rgba(255,255,255,"+starArray[i].bright+")";
+				var twinkle = Math.random();
+				if (twinkle > 0.99)
+				{
+					var twinkleDelta = Math.random();
+					ctx.fillStyle = "rgba(255,255,255,"+twinkleDelta+")";
+				}
+			ctx.fillRect(starArray[i].starX,starArray[i].starY,1,1);
+		}
+		frame = 0;
+	
+	}
+	
+	function drawSun(ctx){
+			ctx.beginPath();
+			ctx.arc(sunX,sunY,78,0,2*Math.PI);
+			ctx.fillStyle = "rgba(255, 255, 119, 0.1)";
+			ctx.fill();
+			
+			ctx.beginPath();
+			ctx.arc(sunX,sunY,76,0,2*Math.PI);
+			ctx.fillStyle = "rgba(255, 255, 119, 0.2)";
+			ctx.fill();
+			
+			ctx.beginPath();
+			ctx.arc(sunX,sunY,74,0,2*Math.PI);
+			ctx.fillStyle = "rgba(255, 255, 119, 0.3)";
+			ctx.fill();
+			
+			ctx.beginPath();
+			ctx.arc(sunX,sunY,72,0,2*Math.PI);
+			ctx.fillStyle = "rgba(255, 255, 119, 0.4)";
+			ctx.fill();
+		
+			ctx.beginPath();
+			ctx.arc(sunX,sunY,70,0,2*Math.PI);
+			ctx.fillStyle = "rgba(255, 255, 119, 0.5)";
+			ctx.fill();
+			
+			ctx.beginPath();
+			ctx.arc(sunX,sunY,68,0,2*Math.PI);
+			ctx.fillStyle = "rgba(255, 255, 119, 0.6)";
+			ctx.fill();
+			
+			ctx.beginPath();
+			ctx.arc(sunX,sunY,66,0,2*Math.PI);
+			ctx.fillStyle = "rgba(255, 255, 119, 0.7)";
+			ctx.fill();
+			
+			ctx.beginPath();
+			ctx.arc(sunX,sunY,64,0,2*Math.PI);
+			ctx.fillStyle = "rgba(255, 255, 119, 0.8)";
+			ctx.fill();
+			
+			ctx.beginPath();
+			ctx.arc(sunX,sunY,62,0,2*Math.PI);
+			ctx.fillStyle = "rgba(255, 255, 119, 0.9)";
+			ctx.fill();
+		
+			ctx.beginPath();
+			ctx.arc(sunX,sunY,60,0,2*Math.PI);
+			ctx.fillStyle = "rgb(255, 255, 119)";
+			ctx.fill();
+			
+		}
+		
+		function drawMoon(ctx){
+			ctx.beginPath();
+			ctx.arc(moonX,moonY,58,0,2*Math.PI);
+			ctx.fillStyle = "rgba(254, 252, 215, 0.4)";
+			ctx.fill();
+			
+			ctx.beginPath();
+			ctx.arc(moonX,moonY,57,0,2*Math.PI);
+			ctx.fillStyle = "rgba(254, 252, 215, 0.6)";
+			ctx.fill();
+			
+			ctx.beginPath();
+			ctx.arc(moonX,moonY,56,0,2*Math.PI);
+			ctx.fillStyle = "rgba(254, 252, 215, 0.8)";
+			ctx.fill();
+			
+			ctx.beginPath();
+			ctx.arc(moonX,moonY,55,0,2*Math.PI);
+			ctx.fillStyle = "rgba(254, 252, 215, 1)";
+			ctx.fill();
+		}
+});	
+</script>
+</body>
+</html>

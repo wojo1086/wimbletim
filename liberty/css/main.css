@@ -1,0 +1,293 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+* {
+	font-family: "Open Sans";
+	padding: 0;
+	margin: 0;}
+html, body {
+	height: 100%;
+}
+.jumbotron {
+	height: 90vh;
+	background-attachment: fixed;
+	background: url('../img/background-lg.png');
+	background-position: 0 -200px;
+	background-color: #FFFFFF;
+	background-repeat: no-repeat;
+	padding: 0;
+}
+#header {
+	background-color: rgba(0,0,0,.9);
+	padding: 15px 0 10px 0;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+}
+#headerInside {
+	width: 85%;
+	margin: 0 auto;
+}
+nav {
+	float: right;
+}
+nav ul {
+	padding-top: 7px;
+}
+nav li {
+	list-style-type: none;
+	float: left;
+	border-right: 1px solid rgba(207,207,207,.8);
+}
+nav li:last-child {
+	border: none;
+}
+nav li a {
+	color: #CFCFCF;
+	padding: 5px 20px;
+	text-decoration: none;
+	webkit-transition: color .5s; /* Safari 3.1 to 6.0 */
+   	transition: color .5s;
+}
+nav li a:hover, li.active a {
+	color: rgba(235,46,43,.9);
+}
+#jumboMain {
+	width: 85%;
+	margin: 0 auto;
+	overflow: auto;
+}
+#jumboMainLeft {
+	width: 50%;
+	text-align: center;
+	padding-top: 250px;
+	float: right;
+}
+#jumboMainRight {
+	width: 50%;
+	padding-top: 236px;
+	float: right;
+}
+#jumboMainRight h1 {
+	color: rgba(240,240,240,1);
+	line-height: 200%;
+	width: 80%;
+}
+#storeInfo {
+	display: inline-block;
+	margin: 0 auto;
+	background-color: rgba(0,0,0,.8);
+	padding: 40px;
+	border-radius: 10px;
+}
+#storeInfo table {
+	text-align: initial;
+	color: rgba(240,240,240,.9);
+}
+#storeInfo table td {
+	font-size: 18px;
+}
+#storeInfo table td:first-child {
+	padding-right: 10px;
+}
+#storeInfo table tr:first-child td, #storeInfo table tr:nth-child(3) td {
+	padding-bottom: 10px;
+}
+#storeInfo table i {
+	color: #E80704;
+}
+section {
+	text-align: center;
+}
+#discounts {
+	padding-bottom: 160px;
+}
+.coupon {
+	border: 1px dashed #000000;
+	width: 60%;
+	max-width: 60%;
+	margin: 30px auto 0 auto;
+	padding: 20px;
+}
+.coupon h2 {
+	color: #E80704;
+}
+.coupon h3, .coupon h2, .coupon p {
+	margin-bottom: 20px;
+}
+#wrapper {
+	min-height: 100%;
+	height: auto !important;
+	position: relative;
+	/*border: 1px solid red;*/
+}
+#services {
+	width: 60%;
+	margin: 0 auto;
+	padding: 100px 0 0 0;
+	color: #222222;
+}
+#services h1 {
+	font-size: 36px;
+}
+#services h3 {
+	text-align: left;
+	padding-top: 10px;
+}
+#services > ul {
+	text-align: left;
+	padding: 50px 0 0 50px;
+}
+#services ul li {
+	font-weight: bold;
+}
+#services li > ul {
+	padding: 20px 0 0 50px;
+	list-style-type: none;
+}
+#services ul:first-child li {
+	font-weight: normal;
+	padding-bottom: 30px;
+}
+#clear {
+	clear: both;
+	height: 100px;
+}
+footer {
+	width: 100%;
+	padding: 40px 0;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	background-color: rgba(0,0,0,.9);
+}
+footer span {
+	color: #FFFFFF;
+}
+footer a, footer a:active, footer a:visited {
+	color: rgba(232,7,4,1);
+	text-decoration: none;
+	webkit-transition: color .5s; /* Safari 3.1 to 6.0 */
+   	transition: color .5s;
+}
+
+
+@media (max-width: 1400px) {
+	#jumboMainRight h1 {
+		line-height: 180%;
+		font-size: 28px;
+	}
+}
+@media (max-width: 1100px) {
+	#jumboMainRight h1 {
+		width: 95%;
+	}
+}
+@media (max-width: 900px) {
+	#jumboMainLeft {
+		width: 100%;
+		text-align: center;
+		padding-top: 50px;
+	}
+	#jumboMainRight {
+		width: 100%;
+		padding-top: 130px;
+	}
+	#jumboMainRight h1 {
+		width: 95%;
+		text-align: center;
+	}
+	#services {
+		width: 90%;
+	}
+}
+@media (max-width: 768px) {
+	.jumbotron {
+		/*background-position: 0 -100px;*/
+	}
+}
+@media (max-width: 601px) {
+	#services > ul {
+		padding: 30px 0 0 30px;
+	}
+	#services ul li {
+		font-weight: bold;
+	}
+	#services li > ul {
+		padding: 20px 0 0 50px;
+	}
+}
+@media (max-width: 500px) {
+	.jumbotron {
+		height: 100vh;
+	}
+	#headerInside {
+		width: 90%;
+	}
+	#headerInside img {
+		height: 20px;
+		margin-top: 5px;
+	}
+	nav ul {
+		padding-top: 3px;
+		margin-right: -20px;
+	}
+	nav ul li a {
+		padding: 5px 20px;
+	}
+	#jumboMainRight h1 {
+		font-size: 20px;
+	}
+	#services > ul {
+		padding: 30px 0 0 30px;
+	}
+	#services li > ul {
+		padding: 20px 0 0 10px;
+	}
+}
+@media (max-width: 376px) {
+	nav ul li a {
+		font-size: 12px;
+	}
+	#jumboMainRight h1 {
+		font-size: 20px;
+	}
+}
+@media (max-width: 321px) {
+	nav ul {
+		margin-right: -10px;
+	}
+	nav ul li a {
+		padding: 5px 10px;
+	}
+	#jumboMainLeft {
+		padding-top: 30px;
+	}
+	#jumboMainRight {
+		width: 100%;
+		padding-top: 100px;
+	}
+	#jumboMainRight h1 {
+		font-size: 16px;
+	}
+	#storeInfo {
+		padding: 30px;
+	}
+	#storeInfo table td {
+		font-size: 14px;
+	}
+	#storeInfo table td:first-child {
+		padding-right: 10px;
+	}
+	#storeInfo table tr:first-child td, #storeInfo table tr:nth-child(3) td {
+		padding-bottom: 10px;
+	}
+	#services h3 {
+		font-size: 16px;
+	}
+	#services > ul {
+		padding: 20px 0 0 20px;
+	}
+	#services li > ul {
+		padding: 20px 0 0 5px;
+	}
+}

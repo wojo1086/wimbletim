@@ -1,0 +1,130 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans';}
+html {
+	height: 100%;}
+body {
+	position: relative;
+	/*background: #11111F;*/
+	height: 100%;}
+#optionsBar {
+	width: 100%;
+	background: #0066FF;
+	background: -webkit-linear-gradient(#EFEFEF, #CACACA); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#EFEFEF, #CACACA); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#EFEFEF, #CACACA); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#0066FF, #003D99); /* Standard syntax */}
+#optionsBar ul.contentSelect li {
+	display: inline-block;
+	color: #FFFFFF;
+	padding: 8px 10px 8px 10px;}
+#optionsBar ul.contentSelect li:hover {
+	background: #F2FCFF;
+	color: #003D99;
+	cursor: pointer;}
+#optionsBar ul.contentSelect li table {
+	display: none;
+	position: absolute;
+	top: 38px;
+	border-right: 1px solid #0066FF;
+	border-bottom: 1px solid #0066FF;
+	left: 0;
+	background: #F2FCFF;
+	padding: 0;
+	color: #0066FF;}
+#optionsBar ul.contentSelect li table td {
+	padding: 6px 10px 6px 10px;
+	text-align: center;
+	font-size: 12px;}
+#optionsBar ul.contentSelect li table td:hover {
+	background: #0066FF;
+	color: #FFFFFF;}
+#optionsBar ul.contentSelect li:hover table {
+	display: block;}
+span.chooseDivider {
+	padding: 0 0 0 10px;}
+#layout_popup {
+	background: #FFFFFF;
+	color: #444444;}
+#layout_popup table td {
+	width: 200px;
+	padding-left: 5px;
+	font-size: 12px;
+	border-right: 1px solid #DEDEDE;}
+#layout_popup table tr:first-child td:hover {
+	cursor: pointer;
+	background: #F6F6F6;}
+#layout_popup table td:last-child {
+	border-right: none;}
+#layout_popup table tr:first-child {
+	text-align: center;}
+#leftVertBar {
+	width: 14%;
+	padding: 5px;
+	float: left;}
+#leftVertBar textarea {
+	width: 100%;
+	font-family: monospace;
+	height: 800px;
+	border: none;
+	resize: none;}
+#middleContainer {
+	width: 60%;
+	float: left;
+	height: 92%;}
+#topMiddleBar {
+	height: 48%;
+	padding: 5px;
+	border: 1px solid #EAEAEA;}
+#topMiddleBar textarea {
+	width: 100%;
+	height: 100%;
+	font-family: monospace;
+	border: none;
+	resize: none;}
+#bottomMiddleBar {
+	height: 48%;
+	padding: 5px;
+	margin-top: 10px;
+	border: 1px solid #EAEAEA;}
+#bottomMiddleBar iframe {
+	width: 100%;
+	border: none;
+	height: 100%;}
+#rightVertBar {
+	float: right;
+	padding: 5px;
+	width: 24%;}
+#generatedHTMLCode {
+	width: 100%;
+	height: 100px;
+	border: 1px solid #EAEAEA;
+	resize: none;}
+#generatedCSSCode {
+	width: 100%;
+	height: 100px;
+	border: 1px solid #EAEAEA;
+	resize: none;}
+table.headerTable {
+	font-size: 12px;
+	width: 100%;}
+table.headerTable input[type="text"] {
+	font-size: 12px;}
+table.headerTable input[type="number"] {
+	font-size: 11px;
+	width: 45px;}
+table.headerTable select {
+	font-size: 11px;}
+table.headerTable th {
+	background: #0066FF;
+	color: #FFFFFF;}
+table.headerTable td:first-child {
+	width: 155px;}
+table.headerTable td:last-child {
+	text-align: right;}
+div.lineno:hover {
+	cursor: pointer;}
+table.headerTable td.marginInputs {
+	text-align: center;}

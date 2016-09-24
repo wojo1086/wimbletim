@@ -1,0 +1,129 @@
+<table class='headerTable' border='0'>
+	<th colspan='2'>Header</th>
+	<tr>
+		<td>ID Name:</td>
+		<td><input type='text' id='headerID' />
+	</tr>
+	<tr>
+		<td>Class Name:</td>
+		<td><input type='text' id='headerClass' />
+	</tr>
+	<tr>
+		<td>Width:</td>
+		<td>
+			<input type='number' id='headerWidth' />
+			<select id='headerWidthScale'>
+				<option value='px'>px</option>
+				<option value='%'>%</option>
+				<option value='em'>em</option>
+			</select>
+			<input type='checkbox' id='headerWidthAuto' /> Auto
+			</td>
+	</tr>
+	<tr>
+		<td>Height:</td>
+		<td>
+			<input type='number' id='headerHeight' />
+			<select id='headerHeightScale'>
+				<option value='px'>px</option>
+				<option value='%'>%</option>
+				<option value='em'>em</option>
+			</select></td>
+	</tr>
+	<tr>
+		<td>Background: <input type='text' id="headerSolidColor" value='#FFFFFF' /><span id='headerBackgroundGradientAsk'><input type='checkbox' id='headerBackgroundGradientCheck' /> Use Gradient</span></td>
+		<td>Font Color: <input type='text' id="headerFontColor" value='#000000' /></td>
+	</tr>
+	<tr>
+		<td>Margin:</td>
+		<td class='marginInputs'>
+			<input type='number' id='headerMarginTop' />
+			<select id='headerMarginTopScale'>
+			<option value='px'>px</option>
+			<option value='%'>%</option>
+			<option value='em'>em</option>
+		</select><br/>
+		
+		<input type='number' id='headerMarginRight' />
+		<select id='headerMarginRightScale'>
+			<option value='px'>px</option>
+			<option value='%'>%</option>
+			<option value='em'>em</option>
+		</select>
+		
+		<input type='number' id='headerMarginBottom' />
+		<select id='headerMarginBottomScale'>
+			<option value='px'>px</option>
+			<option value='%'>%</option>
+			<option value='em'>em</option>
+		</select><br />
+		
+		<input type='number' id='headerMarginLeft' />
+		<select id='headerMarginLeftScale'>
+			<option value='px'>px</option>
+			<option value='%'>%</option>
+			<option value='em'>em</option>
+		</select></td>
+	</tr>
+</table>
+<script>
+	$("#headerSolidColor").spectrum({
+		showInput: true,
+		showInitial: true,
+		preferredFormat: "hex",
+		showPalette: true,
+		hideAfterPaletteSelect:true
+	});
+	$("#headerFontColor").spectrum({
+		showInput: true,
+		showInitial: true,
+		preferredFormat: "hex",
+		showPalette: true,
+		hideAfterPaletteSelect:true
+	});
+	
+	function headerChange()
+	{
+		var html_ID = $('#details table td input#headerID').val();
+		var html_class = $('#details table td input#headerClass').val();
+		var css_ID = "";
+		var css_class = "";
+		var width = $('#details table td input#headerWidth').val();
+		var height = $('#details table td input#headerHeight').val();
+		var css_code = "";
+		var bgcolor = $('#details table td input#headerSolidColor').val();
+		var fontColor = $('#details table td input#headerFontColor').val();
+		if (html_ID != "")
+		{
+			html_ID = " id='" + html_ID + "'";
+		}
+		
+		if (html_class != "")
+		{
+			html_class = " class='" + html_class + "'";
+		}
+		
+		if (width != "")
+		{
+			css_code += "&#13;width:" + width + $('#details table td select#headerWidthScale').val() + ";";
+		}
+		
+		if (height != "")
+		{
+			css_code += "&#13;height:" + width + $('#details table td select#headerHeightScale').val() + ";";
+		}
+		
+		if (bgcolor != "")
+		{
+			css_code += "&#13;background-color:" + bgcolor + ";";
+		}
+		
+		if (fontColor != "")
+		{
+			css_code += "&#13;color:" + fontColor + ";";
+		}
+		
+		$('#generatedHTMLCode').html("<header" + html_ID + html_class + "></header>");
+		$('#generatedCSSCode').html("header{" + css_code + "}");
+	}
+</script>

@@ -1,0 +1,214 @@
+@font-face {
+  font-family: 'Rale-ExtraLight';
+  src: url("../fonts/Raleway-ExtraLight.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Rale-Light';
+  src: url("../fonts/Raleway-Light.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Rale-Regular';
+  src: url("../fonts/Raleway-Regular.ttf") format("truetype"); }
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  font-family: 'Rale-ExtraLight', helvetica; }
+
+html, body {
+  height: 100%; }
+
+body {
+  background: url("../img/background.png"); }
+
+p {
+  color: #111111;
+  font-family: 'Rale-Regular'; }
+
+#mainWrapper {
+  max-width: 1200px;
+  margin: 0 auto -30px auto;
+  background: #FFFFFF;
+  min-height: 100%;
+  box-shadow: 2px 2px 2px #BBBBBB; }
+
+header {
+  text-align: center;
+  border-bottom: 1px solid #E1E1E1;
+  overflow: auto;}
+header .navbar-fixed-top {
+  position: relative;
+}
+header .navbar-header {
+  float: none;
+}
+header .navbar-collapse ul {
+  display: inline-block;
+  float: none;
+  margin: 0 auto;}
+
+header .navbar-collapse li {
+  list-style-type: none;
+  float: left;
+  padding: 0;}
+
+header .navbar-collapse li.active a, header #dropdown ul li.active a {
+  color: #DA1530; }
+
+header a, header a:active, header a:visited, header #dropdown li.active a {
+  text-decoration: none;
+  font-family: 'Rale-Light';
+  text-transform: uppercase;
+  color: #222222; }
+
+header .navbar-collapse a:hover, header #dropdown ul li a:hover {
+  color: #DA1530;
+  text-decoration: none;
+  background-color: rgba(255,255,25,0);}
+
+#mainBodyWrapper {
+  min-height: 100%;
+  padding: 20px 0 60px 0; }
+
+#mainBody {
+  width: 70%;
+  margin: 0 auto; 
+  font-family: 'Rale-Regular', helvetica;}
+
+#mainBody h1 {
+  color: #444444;
+  padding: 25px 0; }
+#blogBody h1 {
+  color: #444444;
+  padding: 25px 0 0 0;
+}
+p.mainAbout {
+  margin: 10px 0; }
+
+.adminMain {
+  padding: 0 20px 20px 20px;
+  font-family: helvetica; }
+
+.adminMain h1 {
+  padding: 20px 0 40px 0; }
+
+.adminMain p {
+  padding: 10px 0 10px 0; }
+
+.adminMain input[type='text'] {
+  width: 500px;
+  font-size: 16px;
+  font-family: helvetica;
+  padding: 4px 2px; }
+
+#full-toolbar {
+  border-top: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
+  border-left: 1px solid #DDDDDD; }
+
+#editor {
+  border: 1px solid #DDDDDD;
+  margin-bottom: 20px;
+  min-height: 400px;
+}
+#editor div {
+  font-family: helvetica;
+}
+.adminMain button.adminSubmit {
+  color: #111111;
+  font-family: helvetica;
+  padding: 10px 5px; }
+
+.adminMain select {
+  font-family: helvetica;
+  display: block;
+  margin-bottom: 20px; }
+
+.adminMain select option {
+  font-family: helvetica; }
+
+#blogBody h2 {
+  color: #444444;
+  padding: 35px 0; }
+
+#blogBody ul {
+  margin-left: 30px; }
+
+#blogBody ol {
+  margin-left: 30px; }
+
+#mainBody a, #blogBody a {
+  color: #41B3DE;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 20px;
+  margin-left: 10px; }
+#mainBody a:hover, #blogBody a:hover {
+  color: #DA1530; }
+#blogContent {
+  width: 90%;
+  margin: 0 auto;
+}
+#blogContent h2 {
+  color: #000000;
+}
+#blogContent div {
+  font-family: helvetica;
+  color: #333333;
+}
+#blogContent #submitted {
+  margin-top: 10px;
+  color: #DA1530;
+}
+#mainBody img {
+  margin: 50px auto;
+  display: block;
+}
+footer {
+  text-align: center;
+  height: 30px;
+  font-family: helvetica;
+}
+footer a {
+  font-family: helvetica;
+  color: #DA1530;
+}
+
+@media (max-width: 768px) {
+  header img {
+    height: 60px;
+    float: left;
+    margin: 10px 0 0 20px;
+  }
+  header .navbar-fixed-top {
+    margin: 0;
+  }
+  header button i {
+    padding-top: 10px;
+  }
+  #blogContent {
+    width: 100%;
+  }
+  #mainBody {
+    width: 90%;
+  }
+  #mainBody img {
+    width: 100%;
+  }
+  #blogBody h1 {
+    padding: 5px 0;
+  }
+  #blogBody h2 {
+    font-size: 24px;
+    padding: 10px 0;
+  }
+  #mainBody p.mainAbout a {
+    font-size: 16px;
+  }
+}

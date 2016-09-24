@@ -1,0 +1,171 @@
+* {
+	margin: 0;
+	padding: 0;}
+body {
+	overflow-x: hidden;}
+@keyframes example {
+	0% {transform: rotate(0deg);
+			left: 1000px;}
+    100% {transform: rotate(-360deg);
+			left: 0px;}
+	}
+.align-right {
+	text-align: right;}
+nav.navbar {
+	border-radius: 0;
+	width: 100%;
+	position: fixed;
+	color: #FAFAFA;
+	background: #0066FF;}
+nav.navbar .navbar-brand {
+	color: #FAFAFA;}
+nav.navbar li a, nav.navbar  li.login {
+	color: #FAFAFA;
+	/* For Safari 3.1 to 6.0 */
+    -webkit-transition-property: background;
+    -webkit-transition-duration: .2s;
+    -webkit-transition-timing-function: linear;
+    -webkit-transition-delay: 0s;
+    /* Standard syntax */
+    transition-property: background;
+    transition-duration: .2s;
+    transition-timing-function: linear;
+    transition-delay: 0s;}
+nav.navbar li:hover a, nav.navbar  li.login:hover {
+	background: #FAFAFA;
+	cursor: pointer;
+	color: #0066FF;
+	/* For Safari 3.1 to 6.0 */
+    -webkit-transition-property: background;
+    -webkit-transition-duration: .2s;
+    -webkit-transition-timing-function: linear;
+    -webkit-transition-delay: 0s;
+    /* Standard syntax */
+    transition-property: background;
+    transition-duration: .2s;
+    transition-timing-function: linear;
+    transition-delay: 0s;}
+nav.navbar .navbar-header span {
+	color: #FAFAFA;}
+nav.navbar  li.login {
+	margin: 8px 20px 0 0;
+	border-radius: 5px;
+	padding: 8px;}
+nav.navbar  li.login:hover {
+	box-shadow:
+		5px 0px 10px -7px rgba(0,0,0,0.5),
+		0px 5px 10px -7px rgba(0,0,0,0.5);}
+#preHeaderContainer {
+	height: 25px;
+	background: #3385FF;}
+#preHeader {
+	color: #FAFAFA;
+	text-align: right;}
+#preHeader i {
+	color: #FAFAFA;
+	padding: 2px 4px 2px 4px;
+	margin: 4px 5px 0 5px;}
+#my_popup {
+	width: 500px;
+	height: 300px;
+	background: #FFFFFF;
+	border: 2px solid #0066FF;}
+#my_popup div#closeButton {
+	width: 100%;
+	background: #0066FF;
+	color: #FAFAFA;
+	padding-top: 3px;
+	font-size: 16px;
+	text-align: right;
+	padding-right: 10px;}
+#my_popup table {
+	width: 420px;
+	margin: 25px auto 0 auto;}
+#my_popup table tr:first-child td:first-child {
+	color: #0066FF;
+	font-size: 16px;
+	font-weight: bold;}
+#my_popup table tr:last-child td:first-child {
+	padding-bottom: 10px;}
+#my_popup table td {
+	padding: 10px 0 25px 0;}
+#my_popup table td.moreInfo {
+	text-align: center;
+	border-left: 1px solid #EAEAEA;}
+#my_popup table td.moreInfo button {
+	color: #0066FF;
+	margin-top: 20px;
+	padding: 8px 20px 8px 20px;
+	border: 1px solid #0066FF;}
+#my_popup table td.moreInfo button:hover {
+	color: #FFFFFF;
+	background: #0066FF;
+	border: 1px solid #0066FF;}
+#my_popup table td input {
+	padding: 5px 0 5px 3px;}
+nav.navbar {
+	z-index: 1000;}
+#slide1 {
+	margin-top: 100px;
+	height: 600px;
+	position: relative;}
+#slide1 h1 {
+	color: #0066FF;
+	margin-top: 45px;
+	text-align: center;}
+#slide1 p {
+	text-align: center;
+	font-size: 14px;
+	margin-top: 20px;
+	color: #666666;}
+#slide1 ul {
+	margin: 20px 0 0 30px;
+	color: #666666;}
+#slide2  {
+	background: url('../img/billboard_development_whole.png') no-repeat fixed;
+    height: 300px;
+	margin-top: 20px;
+	background-position: left top;
+    background-size: cover;}
+#slide2 p {
+	color: #DADADA;
+	text-align: center;
+	height: 300px;
+	line-height: 300px;
+	vertical-align: middle;
+	font-size: 50px;}
+#slide3 {
+	position: relative;
+	margin-top: 200px;
+	padding-bottom: 200px;}
+#slide3 img {
+	position: relative;
+	display: none;}
+#slide3 img.animateClass {
+	display: block;
+	animation-name: example;
+    animation-duration: 5s;}
+#slide3 p {
+	text-align: center;}
+#slide3 h1, #slide4 h1 {
+	color: #0066FF;
+	margin-top: 45px;
+	text-align: center;}
+/*#slide4 .col-lg-2, #slide4 .col-lg-4 {
+	border: 1px solid red;}*/
+#slide3 img  {
+	margin: 45px auto 0 auto;}
+#slide4  {
+	background: url('../img/codeBlue.png') no-repeat fixed;
+	margin-top: 350px;
+	height: 600px;
+	background-position: left top;
+    background-size: cover;}
+@media (max-width: 1200px) {
+  #slide2  {
+	margin-top: 100px;}
+}
+@media (max-width: 768px) {
+  #slide2 p {
+    font-size: 36px;}
+}

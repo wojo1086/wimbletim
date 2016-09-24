@@ -1,0 +1,79 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans';}
+#messageFlow {
+	}
+#typeMessage {
+	bottom: 0;
+	width: 100%;
+	margin: 0 0 10px 0;
+	position: absolute;}
+#typeMessage input[type="text"] {
+	margin-left: 10px;
+	height: 40px;
+	padding: 0 5px;
+	color: #444444;
+	font-size: 24px;
+	float: left;
+	width: 90%;}
+#typeMessage input[type="button"] {
+	margin-left: 5px;
+	height: 44px;
+	color: #EFEFEF;
+	padding: 0 15px;
+	border: none;
+	border-radius: 5px;
+	background: -webkit-linear-gradient(#7A9A4B, #587829); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#7A9A4B, #587829); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#AACA7B, #587829); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#9AAA6B, #587829); /* Standard syntax */
+	font-size: 18px;
+	float: left;}
+#typeMessage input[type="button"]:hover {
+	cursor: pointer;}
+#typeMessage input[type="button"]:active {
+	background: #587829;}
+#userFeed {
+	width: 100%;
+	overflow: auto;}
+#userMessageWhole {
+	float: right;
+	text-align: right;
+	border-radius: 10px;
+	padding: 15px;
+	background: #CCEBCC;
+	margin: 10px 20px 0 0;}
+#messageWhole {
+	float: left;
+	text-align: left;
+	border-radius: 10px;
+	padding: 15px;
+	background: #FFEBCC;
+	margin: 10px 20px 0 10px;}
+#userMessage {
+	font-size: 30px;}
+#userTime {
+	color: #666666;
+	font-size: 11px;}
+#messageTabs {
+	width: 100%;
+	margin: 5px 0 0 0;
+	border-bottom: 1px solid #CCCCCC;}
+#messageTabs ul {
+	margin-left: 5px;}
+#messageTabs ul li {
+	display: inline-block;
+	list-style-type: none;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	border-top: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	border-left: 1px solid #CCCCCC;
+	padding: 10px 15px;}
+#messageTabs ul li:hover {
+	cursor: pointer;
+	background: #CCEBCC;}
+.activeTab {
+	background: #CCEBCC;}

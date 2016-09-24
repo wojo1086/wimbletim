@@ -1,0 +1,185 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans';}
+html, body {
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+	height: 100%;
+	background-color: #000000;}
+#leftDiag {
+	position: absolute;
+	border-right: 600px solid transparent;
+	border-top: 1200px solid #CC0000;
+	z-index: 200;
+	webkit-transition: border 1s; /* Safari 3.1 to 6.0 */
+   	transition: border 1s;
+}
+#surround {
+	float: left;
+	position: relative;
+	width: 600px;
+	z-index: 201;
+	text-align: right;
+	padding-top: 75px;
+	webkit-transition: width 1s; /* Safari 3.1 to 6.0 */
+   	transition: width 1s;
+}
+#surround li {
+	margin-right: 37px;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	width: 20px;
+	padding: 0 15px;
+	clear: both;
+	float: right;
+	list-style-type: none;
+	border-right: 15px solid transparent;
+	border-top: 30px solid transparent;
+}
+#surround li:nth-child(2) {
+	margin-right: 62px;
+}
+#surround li:nth-child(3) {
+	margin-right: 87px;
+}
+#surround li a {
+	color: #FFFFFF;
+	text-decoration: none;
+	float: right;
+	font-weight: bold;
+	margin-top: -30px;
+	line-height: 30px;
+}
+#surround li:hover, #surround li.activeLink {
+	border-right: 15px solid transparent;
+	border-top: 30px solid black;
+}
+#surround li:hover a, #surround li.activeLink a {
+	border-left: 15px solid transparent;
+	border-bottom: 30px solid black;
+	margin-top: -30px;
+	height: 0;
+	line-height: 30px;
+	padding-left: 20px;
+}
+#socialBarSurround {
+	width: 100%;
+}
+#socialBar {
+	width: 1200px;
+	padding-top: 10px;
+	margin: auto auto;
+}
+#order {
+	text-transform: uppercase;
+	float: right;
+	color: #888888;
+	font-size: 12px;
+	font-weight: 600;
+}
+#order a {
+	color: #CC0000;
+	text-decoration: none;
+	font-weight: 400;
+}
+#socialBar button {
+	float: right;
+	margin: 0 30px 0 0;
+	background-color: #000000;
+	color: #888888;
+	font-size: 18px;
+	font-weight: 600;
+	padding: 4px 6px;
+	border: 2px solid #888888;
+	webkit-transition: background-color 1s; /* Safari 3.1 to 6.0 */
+    transition: background-color 1s;
+}
+#socialBar button:hover {
+	background-color: #888888;
+	color: #000000;
+	cursor: pointer;
+	webkit-transition: background-color 1s; /* Safari 3.1 to 6.0 */
+    transition: background-color 1s;
+    webkit-transition: color 1s; /* Safari 3.1 to 6.0 */
+    transition: color 1s;
+}
+#mainBody {
+	width: 1200px;
+	margin: auto auto;
+	clear: both;
+}
+#mainBody img {
+	width: 100%;
+	margin-top: -148px;
+}
+#mainSection {
+	position: relative;
+	z-index: 100;
+	margin-top: 5px;
+}
+#trainingHeaderWrap {
+	width: 60%;
+	border-bottom: 2px solid #CC0000;
+}
+#mainSection h3 {
+	color: #FFFFFF;
+	text-transform: uppercase;
+	font-weight: 400;
+	width: ;
+	padding-left: 30px;
+	border-left: 15px solid transparent;
+	border-bottom: 30px solid #222222;
+	margin-top: -30px;
+	height: 0;
+	line-height: 30px;
+}
+
+
+
+
+
+@media (max-width: 1780px) {
+	#leftDiag {
+		border-right: 350px solid transparent;
+		border-top: 700px solid #CC0000;
+	}
+	#surround {
+		width: 350px;
+		padding-top: 75px;
+	}
+}
+@media (max-width: 1250px) {
+	#leftDiag {
+		border-right: 250px solid transparent;
+		border-top: 500px solid #CC0000;
+	}
+	#surround {
+		width: 250px;
+		padding-top: 75px;
+	}
+	#mainBody {
+		width: 90%;
+	}
+	#socialBar {
+		width: 90%;
+	}
+}
+@media (max-width: 875px) {
+	#leftDiag {
+		display: none;
+	}
+	#surround {
+		display: none;
+	}
+	#socialBarSurround {
+		display: none;
+	}
+	#mainBody img {
+	margin-top: 20px;
+}
+}
+@media (max-width: 768px) {
+	
+}

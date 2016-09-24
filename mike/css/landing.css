@@ -1,0 +1,128 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans';}
+html, body {
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+	height: 100%;}
+h2 {
+	color: #222222;
+	padding: 30px 0 10px 20px;
+	}
+#loginBar {
+	width: 100%;
+	background-color: #222222;
+	overflow: auto;
+}
+#loginBar a {
+	float: right;
+	padding: 15px 20px;
+	color: #FFFFFF;
+	text-decoration: none;
+	background-color: #CC0000;
+	text-shadow: 1px 1px 1px #000, 0 0 0 #000, 1px 1px 1px #000;
+	margin-right: 30px;
+}
+#logoBar {
+	background-color: #414D59;
+	padding: 15px 0 15px 15px;
+}
+#section1 {
+	background: url("../img/background.gif") no-repeat fixed;
+	background-position: left top;
+    background-size: cover;
+    text-align: center;
+    border-bottom: 3px solid #CC0000;
+	height: 850px;}
+#section1 h1 {
+	text-transform: uppercase;
+	color: #FFFFFF;
+	font-size: 60px;
+	padding-top: 100px;
+	text-shadow: 1px 1px 1px #000, 0 0 0 #000, 1px 1px 1px #000;
+}
+#section1 p {
+	color: #FFFFFF;
+	margin: 80px 0 150px 0;
+	font-size: 24px;
+	letter-spacing: 1px;
+	font-weight: 600;
+	text-shadow: 1px 1px 1px #000, 0 0 0 #000, 1px 1px 1px #000;
+}
+#section1 a, #bottomLink a {
+	padding: 15px 30px;
+	color: #FFFFFF;
+	border-radius: 10px;
+	text-decoration: none;
+	text-shadow: 1px 1px 1px #000, 0 0 0 #000, 1px 1px 1px #000;
+	position: relative;
+	background-color: #CC0000;
+}
+.bottomHalf {
+	width: 75%;
+	margin: auto auto;
+}
+#section2 {
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #AAAAAA;
+}
+#section2 h3 {
+	text-align: right;
+	padding: 30px 15px 5px 0;
+	color: #CC0000;
+}
+#section3 i {
+	color: #222222;
+	font-size: 80px;
+}
+#section3 {
+	display: inline-block;
+}
+#bubbleCircle {
+	width: 25%;
+	float: left;
+	text-align: center;
+}
+#bubbleCircle span{
+	background: #DDDDDD;
+	padding: 50px;
+	display: inline-block;
+	border-radius: 100px;
+}
+#bubbleText {
+	width: 74%;
+	padding-top: 30px;
+	float: left;
+}
+#bubbleText p {
+	color: #222222;
+}
+#bubbleText p.quoteName {
+	text-align: right;
+	margin: 30px 10px 0 0;
+}
+span.player {
+	color: #CC0000;
+}
+#bottomLink {
+	text-align: center;
+	padding: 130px 0 100px 0;
+}
+footer {
+	background-color: #111111;
+	padding: 10px 0;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 13px;
+}
+footer a {
+	color: #FFFFFF;
+	font-size: 13px;
+}
+footer a.websiteLink {
+	text-decoration: none;
+	font-weight: bold;
+	margin: 0 10px;
+}

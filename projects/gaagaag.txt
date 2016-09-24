@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tim's Portfolio</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+<script src="../jquery-popup-overlay-gh-pages/jquery.popupoverlay.js"></script>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" href="../font-awesome-4.3.0/css/font-awesome.min.css" />
+</head>
+<body data-ng-app="" data-ng-controller="home">
+	<div id='optionsBar'>
+		<div id='chooseLayout' class='my_popup_open'>Choose<br />Layout</div>
+	</div>
+	
+	<div id='leftVertBar'>
+<textarea spellcheck="false">
+* {
+padding: 0;
+margin: 0;}
+</textarea>
+	</div>
+	
+	<div id='middleContainer'>
+		<div id='topMiddleBar'>
+<textarea spellcheck="false" data-ng-model='iText'>
+
+</textarea>
+		</div>
+		
+		<div id='bottomMiddleBar'>
+			<iframe id='content_iframe' data-ng-bind='iText'></iframe>
+		</div>
+	</div>
+	
+	<div id='rightVertBar'>
+	
+	</div>
+	
+	<div id='layout_popup'>
+		<p>Choose a layout for your site</p>
+		<table>
+			<tr>
+				<td><img src='img/layout-3.png' /><br />Header/Footer: <b>Fixed Width</b><br />Body: <b>Fixed Width</b></td>
+				<td><img src='img/layout-1.png' /><br />Header/Footer: <b>Screen Width</b><br />Body: <b>Fixed Width</b></td>
+				<td><img src='img/layout-2.png' /><br />Header/Footer: <b>Screen Width</b><br />Body: <b>Screen Width</b></td>
+			</tr>
+		</table>
+	</div>
+<script>
+$(function(){
+	// Initialize the plugin
+    $('#layout_popup').popup({
+		opacity: 0.7  
+	});
+	
+	$('#topMiddleBar textarea').val("<!DOCTYPE HTML><html lang='en'><head><meta charset='UTF-8'></head><body>Hello</body></html>");
+	
+	var app = angular.module('myApp', []);
+	app.controller('home', function($scope) {
+		$scope.firstName = "John";
+		$scope.lastName = "Doe";
+	});
+	update_iFrame();
+	
+	$('#chooseLayout').on('click', function() {
+		$('#layout_popup').popup('show');
+	});
+	
+	$('#layout_popup table td img').on('click', function() {
+		var source = $(this).attr('src');
+		$('#chooseLayout').html("<img src='"+source+"' width='40' />");
+		$('#layout_popup').popup('hide');
+	});
+	
+	function update_iFrame()
+	{
+		var textHTML = convert($('#topMiddleBar textarea').val());
+		var splitHTML = textHTML.split("</head>", 2);
+		var textCSS = $('#leftVertBar textarea').html();
+		var totalHTMLCSS = splitHTML[0] + "<style>" + textCSS + "</style></head>" + splitHTML[1];
+		var iframe = document.getElementById('content_iframe');
+		iframe = (iframe.contentWindow) ? iframe.contentWindow : (iframe.contentDocument.document) ? iframe.contentDocument.document : iframe.contentDocument;
+		iframe.document.open();
+		iframe.document.write(totalHTMLCSS);
+		iframe.document.close();
+		
+	}
+	
+	function convert(string)
+	{
+		string = string.replace(/&lt;/g, "<");
+		string = string.replace(/&gt;/g, ">");
+		return string;
+	}
+	
+});
+</script>
+</body>
+</html>

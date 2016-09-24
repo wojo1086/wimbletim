@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<title>Blakenwite</title>
+<link rel="stylesheet" type="text/css" href="css/bw.css" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+<link rel="icon" href="../favicon.ico" type="image/x-icon">
+</head>
+<body>
+	<div id='bodyWrapper'>
+		<div id='main'>
+			<h1>Blakenwite <span>by Timothy Wojtylak</span><button id='setBody'>Try Me</button></h1>
+
+			<h4>A greyscale plugin</h4>
+
+			<h3>Introduction</h3>
+
+			<p>Blakenwite started out as a project to get me used to the ins and outs of creating a plugin while helping me understand github and version control. There were a few obstacles along the way, which you'll read about later, but nonetheless, it has been a great learning experience and I hope to only make it better.</p>
+			
+			<p>With that being said, let's get started...</p>
+
+			<h3>Parameter Breakdown</h3>
+
+			<p>As of right now, there exists only two parameters, 'dull' and 'bright.'</p>
+
+			<table class='methodTable'>
+				<th>Parameter</th>
+				<th>Description</th>
+				<tr>
+					<td>Dull</td>
+					<td>Sends all child and descendant elements through the greyscale function <br />and sets their properties accordingly.<br /><br />
+					<span>$('#someElement').bw('dull');</span></td>
+				</tr>
+				<tr>
+					<td>Bright</td>
+					<td>Returns all child and descendant elements to their original colors.<br /><br />
+					<span>$('#someElement').bw('bright');</span></td></td>
+				</tr>
+			</table>
+
+			<h3>Setup</h3>
+			
+			<p>The process for setting up Blakenwite couldn't be any easier. The first thing you'll need to do is get your hands on the plugin. You can download the zip from github and extract it into your development environment.</p>
+			
+			<p><a href='https://github.com/wojo1086/BW.git'>Download from Github</a></p>
+			
+			<p>Once you have that extracted, you'll notice all the files are in one folder called "BW." There is a minified version coming in at a whopping 1080 bytes and the unminified version bringing up the rear at 1960 bytes.</p>
+
+			<p>The next step is including the file into your webpage. Blakenwite depends on jQuery in order to work and if you include jQuery AFTER you've included Blakenwite, you won't get the results you were expecting.</p>
+
+			<p>Sample page layout:</p>
+<textarea rows='13' cols='57' readonly="readonly">
+<!DOCTYPE html>
+<head>
+<title>Blakenwite</title>
+<link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+<body>
+	<div id='someDiv'></div>
+
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="bw/bw.min.js"></script>
+</body>
+</html>
+</textarea>
+
+		<p>Now that you've included the plugin, you'll probably want to start using it.</p>
+
+		<h3>Usage</h3>
+
+		<p>Let's build these examples off of the sample page layout from the previous section. We'll start by adding some inline styling to the div and initializing Blakenwite.</p>
+
+<textarea rows='10' cols='57' readonly="readonly">
+<body>
+	<div id='someDiv' style='width: 100px; height: 100px; background-color: blue;'></div>
+
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="bw/bw.min.js"></script>
+<script>
+	$('#someDiv').bw('dull');
+</script>
+</body>
+</textarea>
+
+		<p>To initialize Blakenwite, you'll need set in onto the parent element of the elements you want it to affect and pass the word 'dull' to it. 'Dull' is the keyword that tells the plugin to set all colors to their greyscale counterpart. If you take this code just as it is and run it, you will notice nothing happens. This is because Blakenwite affects all elements within the element being called upon.</p>
+
+<textarea rows='12' cols='57' readonly="readonly">
+<body>
+	<div id='someDiv'>
+		<div style='width: 100px; height: 100px; background-color: blue;'></div>
+	</div>
+
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="bw/bw.min.js"></script>
+<script>
+	$('#someDiv').bw('dull');
+</script>
+</body>
+</textarea>
+
+		<p>Now, using the example above, you can see that it works. The box below is set to blue, but Blakenwite changed it to its greyscale counterpart.</p>
+
+		<table class='exampleTable'>
+			<tr>
+				<td>
+					<div id='someDiv2'>
+						<div style='width: 100px; height: 100px; background-color: blue; margin: auto auto;'></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<p>To set the elements back to its original color, pass the word 'bright' as the parameter instead of 'dull,' like this:</p>
+
+<textarea rows='12' cols='57' readonly="readonly">
+<body>
+	<div id='someDiv'>
+		<div style='width: 100px; height: 100px; background-color: blue;'></div>
+	</div>
+
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="bw/bw.min.js"></script>
+<script>
+	$('#someDiv').bw('bright');
+</script>
+</body>
+</textarea>
+
+		<p>To take it a step further, we can add a button to toggle Blakenwite on and off. Now, there isn't a built in toggle function, yet, so you'll have to find a way to keep track of the state of the toggle. An easy way to do this is to assign a variable with a boolean value and keep switching the value every time the button is pressed.</p>
+
+<textarea rows='24' cols='57' readonly="readonly">
+<body>
+	<div id='someDiv'>
+		<div style='width: 100px; height: 100px; background-color: blue;'></div>
+		<button>Toggle Me</button>
+	</div>
+
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="bw/bw.min.js"></script>
+<script>
+	var toggle = false;
+
+	$('button').on('click', function(){
+		if (toggle == false)
+		{
+			$('#someDiv').bw('dull');
+			toggle = true;
+		}else{
+			$('#someDiv').bw('bright');
+			toggle = false;
+		}
+	});
+</script>
+</body>
+</textarea>
+
+		<table class='exampleTable1'>
+			<tr>
+				<td>
+					<div id='someDiv3'>
+						<div style='width: 100px; height: 100px; background-color: blue; margin: auto auto;'></div>
+					</div>
+				</td>
+				<td><button id='example3'>Toggle Me</button></td>
+			</tr>
+		</table>
+
+		<p>Blakenwite also supports nesting. Let's say, for example, you have text within your box you don't want to be greyscaled. All you have to do is initialize their parent element with the 'bright' parameter and Blakenwite takes care of the rest.</p>
+		
+
+<textarea rows='15' cols='57' readonly="readonly">
+<body>
+	<div id='someDiv'>
+		<div style='width: 100px; height: 100px; background-color: blue;'>
+			<p style='color: red;'>This text should not be greyscaled.</p>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="bw/bw.min.js"></script>
+<script>
+	$('#someDiv').bw('dull');
+	$('#someDiv div').bw('bright');
+</script>
+</body>
+</textarea>
+
+		<p>The above code outputs:</p>
+		<table class='exampleTable'>
+			<tr>
+				<td>
+					<div id='someDiv4'>
+						<div style='width: 100px; height: 100px; background-color: blue; margin: auto auto;'>
+							<p style='font-size: 12px; color: red;'>This text should not be greyscaled.</p>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<p>Blakenwite also handles opacity.</p>
+
+<textarea rows='14' cols='57' readonly="readonly">
+<body>
+	<div id='someDiv'>
+		<span><p style='color: blue;'>This text should not be greyscaled.</p></span>
+		<div style='width: 100px; height: 100px; background-color: rgba(0, 0, 255, .2);'></div>
+	</div>
+
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="bw/bw.min.js"></script>
+<script>
+	$('#someDiv').bw('dull');
+	$('#someDiv span').bw('bright');
+</script>
+</body>
+</textarea>
+
+		<table class='exampleTable1'>
+			<tr>
+				<td>
+					<div id='someDiv5'>
+						<span><p>This text is sitting under the box.</p></span>
+						<div style='width: 100px; height: 100px; background: rgba(0, 0, 255, .2); margin: -70px auto 0 auto;'></div>
+					</div>
+				</td>
+				<td><button id='example5'>Toggle Me</button></td>
+			</tr>
+		</table>
+
+		<h3>Limitations</h3>
+
+		<p>There are a few limitations you should be aware of while utilizing Blakenwite:</p>
+
+		<ol>
+			<li> Images are not yet supported. This means all your images will remain in color. Now, I have a working version that can greyscale all images, however, it is slow and not very efficient. So for now, no images.</li>
+			<li>Dynamically added content is not supported, yet. If you have content that is dynamically loaded into your webpage, it will turn grey, but it won't come back from it. The reason for this is explained below in the 'How It Works' section.</li>
+			<li>Gradients aren't supported right now.</li>
+		</ol>
+
+		<h3>How It Works</h3>
+
+		<p>Once the document has fully loaded, Blakenwite creates a virtual tree of your DOM and the styles of each element. This is so it can go back to the original color when using the 'bright' parameter.</p>
+
+		<p>When the parameter 'dull' is passed, Blakenwite takes the element being invoked upon and finds all its children and descendants. It takes what the colors are for their various properties and sends them through the greyscale algorithm to determine what shade of grey matches the set of RGB values for each property. Finally, it sets the colors accordingly onto each element being affected.</p>
+
+		<p>To go from the 'dull' state to the 'bright' state, the element being invoked upon is found within the virtual DOM tree and those initial color values for the children and descendants of that element are reset.</p>
+
+		</div>
+	</div>
+  
+
+
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="bw/bw.min.js"></script>
+<script>
+$(document).ready(function(){
+	var button0 = false;
+	var button3 = false;
+	var button5 = false;
+
+	$('#setBody').on('click', function(){
+		if (button0 == false)
+		{
+			$('#bodyWrapper').bw('dull');
+			button0 = true;
+		}else{
+			$('#bodyWrapper').bw('bright');
+			$('#someDiv2').bw('dull');
+			$('#someDiv4').bw('dull');
+			$('#someDiv4 div').bw('bright');
+			button0 = false;
+		}
+	});
+
+	$('#someDiv1').bw('dull');
+
+	$('#someDiv2').bw('dull');
+
+	$('#example3').on('click', function(){
+		if (button3 == false)
+		{
+			$('#someDiv3').bw('dull');
+			button3 = true;
+		}else{
+			$('#someDiv3').bw('bright');
+			$('#someDiv4').bw('dull');
+			$('#someDiv4 div').bw('bright');
+			button3 = false;
+		}
+	});
+
+	$('#someDiv4').bw('dull');
+	$('#someDiv4 div').bw('bright');
+
+	$('#example5').on('click', function(){
+		if (button5 == false)
+		{
+			$('#someDiv5').bw('dull');
+			$('#someDiv5 span').bw('bright');
+			button5 = true;
+		}else{
+			$('#someDiv5').bw('bright');
+			button5 = false;
+		}
+	});
+	
+});
+</script>
+</body>
+</html>

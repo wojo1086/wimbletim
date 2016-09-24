@@ -1,0 +1,130 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Arial';}
+body {
+	background: url("../img/background.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+table td {
+	color: #CCCCCC;
+	font-size: 12px;
+	text-align: center;
+}
+#taskbar {
+	background-color: rgba(0, 30, 54, .7);
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+#taskbar i {
+	color: rgba(255, 255, 255, 1);
+	font-size: 18px;
+	float: left;
+	display: inline-block;
+	padding: 12px 16px 12px 15px;
+}
+#taskbar i:hover {
+	background-color: rgba(25, 52, 73, 1);
+	color: rgba(30, 145, 234, 1);
+}
+#taskbar input {
+	float: left;
+	padding: 13px;
+	font-size: 14px;
+	letter-spacing: .25px;
+	background-color: rgba(51, 76, 95, 1);
+	min-width: 150px;
+	width: 17%;
+	border: none;
+}
+#taskbar input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #999999;
+    font-weight: 300;
+}
+#taskbar input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   	color:	#999999;
+    font-weight: 300;
+  	opacity: 1;
+}
+#taskbar input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  	color: #999999;
+    font-weight: 300;
+   	opacity:  1;
+}
+#taskbar input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   	color:	#999999;
+    font-weight: 300;
+}
+#taskbar input:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+  	color:	#999999;
+    font-weight: 300;
+}
+#taskbar input:hover {
+	background-color: rgba(76, 98, 115, 1);
+}
+#taskbar input:focus {
+	background-color: rgba(255, 255, 255, 1);
+	color: #444444;
+	font-weight: 600;
+}
+#taskbar input:focus::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #777777;
+    font-weight: 300;
+}
+#taskbar input:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   	color:	#777777;
+    font-weight: 300;
+  	opacity: 1;
+}
+#taskbar input:focus::-moz-placeholder { /* Mozilla Firefox 19+ */
+  	color: #777777;
+    font-weight: 300;
+   	opacity:  1;
+}
+#taskbar input:focus:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   	color:	#777777;
+    font-weight: 300;
+}
+#taskbar input:focus:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+  	color:	#777777;
+    font-weight: 300;
+}
+#taskbar img#taskview {
+	padding: 14px 14px;
+	float: left;
+}
+#taskbar img#taskview:hover {
+	background-color: rgba(25, 52, 73, 1);
+	padding: 14px 12px 14px 12px;
+}
+#taskbar img:hover {
+	background-color: rgba(25, 52, 73, 1);
+}
+#taskbar img#taskbarFolder {
+	padding: 9px 14px;
+	float: left;
+}
+#taskbar span#dateTime {
+	float: right;
+	margin-right: 4px;
+	border-right: 1px solid #888888;
+	padding: 5px 11px;
+	font-size: 12px;
+}
+#taskbar span#dateTime:hover {
+	background-color: rgba(25, 52, 73, 1);
+}
+#taskbar span#dateTime p {
+	color: #FFFFFF;
+	text-align: center;
+	font-weight: 400;
+	font-family: 'Segoe UI';
+}
+#taskbar img#actionCenter {
+	float: right;
+	padding: 13px 4px 13px 4px;
+}

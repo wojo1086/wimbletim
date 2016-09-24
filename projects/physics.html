@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Physics</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+<link rel="icon" href="../favicon.ico" type="image/x-icon">
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../jquery-ui-1.11.4.custom/jquery-ui.min.css" />
+<script>
+	var circleY = 900;
+	var deltaTime = 1;
+	var distance;
+	var dotArray = new Array();//Create the array to hold the dot objects
+	function dot(x, y, radius, vx, vy, e)
+	{
+		this.x = x;
+		this.y = y;
+		this.radius = radius;
+		this.vx = vx;
+		this.vy = vy;
+		this.elasticity = e;
+	}
+	var gravity = 0.0,
+    airDrag = 1,
+    groundFriction = 0.98;
+	
+	
+</script>
+</head>
+<body style="margin: 0; padding: 0;">
+
+
+
+
+<canvas id='myCanvas' style="position: absolute;margin-top: -50px;"></canvas>
+<div id="slider" style="margin: 50px auto 0 auto; width: 50%;"><span style="float: left; margin-top: 20px;">Less Gravity</span><span id='displayVal' style="display: block; margin-top: -30px; text-align: center;">0.00</span><span style="float: right; margin-top: 20px;">More Gravity</span></div>
+<script>
+$(document).ready(function(){
+	var windowHeight = $(window).height();//Get window height
+	var windowWidth = $(window).width();//Get window width
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext('2d');
+	ctx.canvas.width = windowWidth;
+	ctx.canvas.height = windowHeight;
+
+	$( "#slider" ).slider({
+		max: 1.01,
+		min: -1.01,
+		value: 0,
+		step: .01,
+		slide: function(event, ui){}
+	});
+	
+	$("#slider").on('slide', function(event, ui){
+		$("#sliderLabel1").html($("#slider").slider("value"));
+		gravity = $("#slider").slider("value");
+		$('#displayVal').text(gravity);
+	});
+
+	
+	ctx.fillStyle = "#FFFFFF";
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
+	ctx.fill();
+	
+	for(var i=0; i<50; i++)
+	{
+		var tempX = Math.floor(Math.random() * windowWidth + 1);
+		var tempY = Math.ceil(Math.random() * windowHeight + 1);
+		var plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+		var tempVX = plusOrMinus * ((Math.random() * 2));
+		var tempVY = plusOrMinus * ((Math.random() * 2));
+		var tempE = Math.random() * .9;
+		
+		dotArray.push(new dot(tempX, tempY, 5, tempVX, tempVY, tempE));
+	}
+	
+	for(var i=0; i<50; i++)
+	{
+		radialGradient = ctx.createRadialGradient(dotArray[i].x-1, dotArray[i].y-1, 1, dotArray[i].x-1, dotArray[i].y-1, 5);
+		radialGradient.addColorStop(0, "#8EC8FF");
+		radialGradient.addColorStop(1, "#1E90FF");
+		ctx.fillStyle = radialGradient;
+		ctx.beginPath();
+		ctx.arc(dotArray[i].x,dotArray[i].y,5,0,2*Math.PI, true);
+		ctx.closePath();
+		//ctx.fillStyle = '#1E90FF';
+		ctx.fill();
+	}
+	
+	
+	var intervalID = window.setInterval(updateCanvas, 20);
+	
+	$( window ).resize(function() {
+		var windowHeight = $(window).height();//Get window height
+		var windowWidth = $(window).width();
+
+		ctx.canvas.width = windowWidth;
+		ctx.canvas.height = windowHeight;
+		if( window.innerHeight == screen.height) {
+			context.canvas.width = windowWidth;
+		}
+		updateCanvas();
+	});
+	
+	function updateCanvas()
+	{
+		//distance = (0.5 * .25 *(deltaTime *deltaTime))/60;
+		ctx.fillStyle = "#FFFFFF";
+		ctx.fillRect(0, 0, canvas.width, canvas.height);
+		ctx.fill();
+
+		for(var i=0; i<50; i++)
+		{
+			//dotArray[i].y += distance;
+			//if (dotArray[i].y > canvas.height)
+			//{
+			//	dotArray[i].y = canvas.height - 5;
+			//}
+			
+			dotArray[i].x += dotArray[i].vx;
+			dotArray[i].y += dotArray[i].vy;
+			
+			if ((dotArray[i].y >= canvas.height - dotArray[i].radius) || (dotArray[i].y <= dotArray[i].radius))
+			{
+				dotArray[i].y = (dotArray[i].y < (dotArray[i].radius) ? (dotArray[i].radius) : (canvas.height - dotArray[i].radius));
+				dotArray[i].vy = -(dotArray[i].vy * dotArray[i].elasticity);
+			}
+			
+			if ((dotArray[i].x >= canvas.width - dotArray[i].radius) || (dotArray[i].x <= dotArray[i].radius))
+			{
+				dotArray[i].x = (dotArray[i].x < (dotArray[i].radius) ? (dotArray[i].radius) : (canvas.width - dotArray[i].radius));
+				dotArray[i].vx = -(dotArray[i].vx * dotArray[i].elasticity);
+			}
+			
+			dotArray[i].vy += gravity;
+			
+			dotArray[i].vx *= airDrag;
+			dotArray[i].vy *= airDrag;
+			
+			radialGradient = ctx.createRadialGradient(dotArray[i].x-1, dotArray[i].y-1, 1, dotArray[i].x-1, dotArray[i].y-1, 5);
+			radialGradient.addColorStop(0, "#8EC8FF");
+			radialGradient.addColorStop(1, "#1E90FF");
+			ctx.fillStyle = radialGradient;
+			
+			ctx.beginPath();
+			ctx.arc(dotArray[i].x,dotArray[i].y,dotArray[i].radius,0,2*Math.PI, true);
+			ctx.closePath();
+			//ctx.fillStyle = '#1E90FF';
+			ctx.fill();
+		}
+		deltaTime++;
+	}
+	
+	var lastTime = 0;
+    var vendors = ['webkit', 'moz'];
+    for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
+        window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame'] || window[vendors[x] + 'CancelRequestAnimationFrame'];
+    }
+
+    
+	if (!window.requestAnimationFrame) window.requestAnimationFrame = function (callback, element) {
+        var currTime = new Date().getTime();
+        var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+        var id = window.setTimeout(function () {
+            callback(currTime + timeToCall);
+        },
+        timeToCall);
+        lastTime = currTime + timeToCall;
+        return id;
+    };
+
+    if (!window.cancelAnimationFrame) window.cancelAnimationFrame = function (id) {
+        clearTimeout(id);
+    };
+
+	
+});
+</script>
+</body>
+</html>
