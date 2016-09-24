@@ -362,11 +362,13 @@
 				<div class="langs">
 					<span>HTML5</span>
 					<span>CSS3</span>
+					<span>JQuery</span>
 					<span>Angular</span>
 					<span>CodeIgniter 3</span>
 					<span>Git</span>
 					<span>LAMP</span>
 					<span>UI Router</span>
+					<span>Lazy Load</span>
 					<span>Ionic</span>
 				</div>
 			</div>
@@ -389,10 +391,12 @@
 				<div class="langs">
 					<span>HTML5</span>
 					<span>CSS3</span>
+					<span>JQuery</span>
 					<span>Angular</span>
 					<span>Laravel 5.2</span>
 					<span>MySQL</span>
 					<span>UI Router</span>
+					<span>Lazy Load</span>
 					<span>Git</span>
 					<span>Google Cloud Platform</span>
 				</div>
@@ -417,6 +421,7 @@
 				<div class="langs">
 					<span>HTML5</span>
 					<span>CSS3</span>
+					<span>Javascript</span>
 				</div>
 			</div>
 			<div class="col-lg-4">
