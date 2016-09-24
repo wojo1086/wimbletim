@@ -353,32 +353,65 @@
 			<div class="col-lg-3"></div>
 		</div> -->
 
-		<div class="row sp">
+		<div class="row sol">
 			<div class="col-lg-2"></div>
-            <div class="col-lg-4 col-lg-push-4">
+			<div class="col-lg-4">
 				<h1><a href="https://www.mygspn.com">myGSPN</a></h1>
-				<p>I made a website a while back for a young lady striving to be a freelance writer. Recently, I decided to redesign the site to make it more modern. I ended up only redesigning the home page. The site consists of live pull of her blogfeed using PHP and a backend administration page where she is able to utilize a text editor to write her content.</p>
+				<p>I was appraoched by a friend of mine saying his grandparents would like a wesbite for their dry cleaning business here in Orlando. I told him it wouldn't be a problem and was able to build it in about 4 hours. It's also mobile friendly.</p>
 				
 				<div class="langs">
 					<span>HTML5</span>
 					<span>CSS3</span>
-					<span>Javascript</span>
-					<span>jQuery</span>
-					<span>Bootstrap 3</span>
-					<span>PHP</span>
+					<span>Angular</span>
+					<span>CodeIgniter 3</span>
+					<span>Git</span>
+					<span>LAMP</span>
+					<span>UI Router</span>
+					<span>Ionic</span>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<a href="https://www.mygspn.com"><img src="img/mygspn.png" alt='myGSPN' /></a>
+			</div>
+			<div class="col-lg-2"></div>
+		</div>
+
+
+
+
+		<div class="row sp">
+			<div class="col-lg-2"></div>
+            <div class="col-lg-4 col-lg-push-4">
+				<h1><a href="http://www.plainbudget.com">Plain Budget</a></h1>
+				<p>Plain Budget started out as a small application I made to help me budget. I realized other people might also want to use it, so I turned it into a full-fledged
+				website. It is still under development, but the core functionality is there.</p>
+				
+				<div class="langs">
+					<span>HTML5</span>
+					<span>CSS3</span>
+					<span>Angular</span>
+					<span>Laravel 5.2</span>
+					<span>MySQL</span>
+					<span>UI Router</span>
+					<span>Git</span>
+					<span>Google Cloud Platform</span>
 				</div>
 			</div>
             
             <div class="col-lg-4 col-lg-pull-4">
-				<a href="https://www.mygspn.com"><img src="img/mygspn.png" alt='myGSPN' /></a>
+				<a href="http://www.plainbudget.com"><img src="img/sp.png" alt='Plain Budget' /></a>
 			</div>
 			<div class="col-lg-3"></div>
 		</div>
 
+
+
+
+
 		<div class="row sol">
 			<div class="col-lg-2"></div>
 			<div class="col-lg-4">
-				<h1><a href="http://www.libertydryclean.com">Dry Cleaners</a></h1>
+				<h1><a href="http://www.libertydryclean.com">Liberty Cleaners</a></h1>
 				<p>I was appraoched by a friend of mine saying his grandparents would like a wesbite for their dry cleaning business here in Orlando. I told him it wouldn't be a problem and was able to build it in about 4 hours. It's also mobile friendly.</p>
 				
 				<div class="langs">
@@ -435,52 +468,9 @@
 			<div class="col-lg-2"></div>
 		</div>
 		
-		<div class="row sp">
-			<div class="col-lg-2"></div>
-            <div class="col-lg-4 col-lg-push-4">
-				<h1><a href="http://www.plainbudget.com">Plain Budget</a></h1>
-				<p>Plain Budget started out as a small application I made to help me budget. I realized other people might also want to use it, so I turned it into a full-fledged
-				website. It is still under development, but the core functionality is there.</p>
-				
-				<div class="langs">
-					<span>HTML5</span>
-					<span>CSS3</span>
-					<span>Javascript</span>
-					<span>jQuery</span>
-					<span>AJAX</span>
-					<span>Bootstrap 3</span>
-					<span>PHP</span>
-					<span>MySQL</span>
-					<span>OOP</span>
-				</div>
-			</div>
-            
-            <div class="col-lg-4 col-lg-pull-4">
-				<a href="http://www.plainbudget.com"><img src="img/sp.png" alt='Plain Budget' /></a>
-			</div>
-			<div class="col-lg-3"></div>
-		</div>
-        
-        <div class="row sol">
-			<div class="col-lg-2"></div>
-			<div class="col-lg-4">
-				<h1><a href="http://wwww.wimbletim.com/projects/physics.html">Physics Playground</a></h1>
-				<p>This is a neat little application that let's you control the gravity affecting a bunch of small marbles. I wanted to test my abilities with real world 
-				physics and the HTML 5 canvas.</p>
-				
-				<div class="langs">
-					<span>HTML5</span>
-					<span>CSS3</span>
-					<span>Javascript</span>
-					<span>jQuery</span>
-					<span>HTML5 Canvas</span>
-				</div>
-			</div>
-			<div class="col-lg-4">
-				<a href="http://www.wimbletim.com/projects/physics.html"><img src="img/physics.png" alt='Physics' /></a>
-			</div>
-			<div class="col-lg-2"></div>
-		</div>
+		
+
+
 
 		<div class="row sp">
 			<div class="col-lg-2"></div>
@@ -503,6 +493,35 @@
 			</div>
 			<div class="col-lg-3"></div>
 		</div>
+
+
+
+
+
+
+        
+        <div class="row sol">
+			<div class="col-lg-2"></div>
+			<div class="col-lg-4">
+				<h1><a href="http://wwww.wimbletim.com/projects/physics.html">Physics Playground</a></h1>
+				<p>This is a neat little application that let's you control the gravity affecting a bunch of small marbles. I wanted to test my abilities with real world 
+				physics and the HTML 5 canvas.</p>
+				
+				<div class="langs">
+					<span>HTML5</span>
+					<span>CSS3</span>
+					<span>Javascript</span>
+					<span>jQuery</span>
+					<span>HTML5 Canvas</span>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<a href="http://www.wimbletim.com/projects/physics.html"><img src="img/physics.png" alt='Physics' /></a>
+			</div>
+			<div class="col-lg-2"></div>
+		</div>
+
+		
         
 	</section>
 
