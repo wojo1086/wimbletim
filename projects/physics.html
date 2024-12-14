@@ -27,8 +27,8 @@
 	var gravity = 0.0,
     airDrag = 1,
     groundFriction = 0.98;
-	
-	
+
+
 </script>
 </head>
 <body style="margin: 0; padding: 0;">
@@ -54,18 +54,18 @@ $(document).ready(function(){
 		step: .01,
 		slide: function(event, ui){}
 	});
-	
+
 	$("#slider").on('slide', function(event, ui){
 		$("#sliderLabel1").html($("#slider").slider("value"));
 		gravity = $("#slider").slider("value");
 		$('#displayVal').text(gravity);
 	});
 
-	
+
 	ctx.fillStyle = "#FFFFFF";
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
 	ctx.fill();
-	
+
 	for(var i=0; i<50; i++)
 	{
 		var tempX = Math.floor(Math.random() * windowWidth + 1);
@@ -74,10 +74,10 @@ $(document).ready(function(){
 		var tempVX = plusOrMinus * ((Math.random() * 2));
 		var tempVY = plusOrMinus * ((Math.random() * 2));
 		var tempE = Math.random() * .9;
-		
+
 		dotArray.push(new dot(tempX, tempY, 5, tempVX, tempVY, tempE));
 	}
-	
+
 	for(var i=0; i<50; i++)
 	{
 		radialGradient = ctx.createRadialGradient(dotArray[i].x-1, dotArray[i].y-1, 1, dotArray[i].x-1, dotArray[i].y-1, 5);
@@ -90,10 +90,10 @@ $(document).ready(function(){
 		//ctx.fillStyle = '#1E90FF';
 		ctx.fill();
 	}
-	
-	
+
+
 	var intervalID = window.setInterval(updateCanvas, 20);
-	
+
 	$( window ).resize(function() {
 		var windowHeight = $(window).height();//Get window height
 		var windowWidth = $(window).width();
@@ -105,7 +105,7 @@ $(document).ready(function(){
 		}
 		updateCanvas();
 	});
-	
+
 	function updateCanvas()
 	{
 		//distance = (0.5 * .25 *(deltaTime *deltaTime))/60;
@@ -120,32 +120,32 @@ $(document).ready(function(){
 			//{
 			//	dotArray[i].y = canvas.height - 5;
 			//}
-			
+
 			dotArray[i].x += dotArray[i].vx;
 			dotArray[i].y += dotArray[i].vy;
-			
+
 			if ((dotArray[i].y >= canvas.height - dotArray[i].radius) || (dotArray[i].y <= dotArray[i].radius))
 			{
 				dotArray[i].y = (dotArray[i].y < (dotArray[i].radius) ? (dotArray[i].radius) : (canvas.height - dotArray[i].radius));
 				dotArray[i].vy = -(dotArray[i].vy * dotArray[i].elasticity);
 			}
-			
+
 			if ((dotArray[i].x >= canvas.width - dotArray[i].radius) || (dotArray[i].x <= dotArray[i].radius))
 			{
 				dotArray[i].x = (dotArray[i].x < (dotArray[i].radius) ? (dotArray[i].radius) : (canvas.width - dotArray[i].radius));
 				dotArray[i].vx = -(dotArray[i].vx * dotArray[i].elasticity);
 			}
-			
+
 			dotArray[i].vy += gravity;
-			
+
 			dotArray[i].vx *= airDrag;
 			dotArray[i].vy *= airDrag;
-			
+
 			radialGradient = ctx.createRadialGradient(dotArray[i].x-1, dotArray[i].y-1, 1, dotArray[i].x-1, dotArray[i].y-1, 5);
 			radialGradient.addColorStop(0, "#8EC8FF");
 			radialGradient.addColorStop(1, "#1E90FF");
 			ctx.fillStyle = radialGradient;
-			
+
 			ctx.beginPath();
 			ctx.arc(dotArray[i].x,dotArray[i].y,dotArray[i].radius,0,2*Math.PI, true);
 			ctx.closePath();
@@ -154,7 +154,7 @@ $(document).ready(function(){
 		}
 		deltaTime++;
 	}
-	
+
 	var lastTime = 0;
     var vendors = ['webkit', 'moz'];
     for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
@@ -162,7 +162,7 @@ $(document).ready(function(){
         window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame'] || window[vendors[x] + 'CancelRequestAnimationFrame'];
     }
 
-    
+
 	if (!window.requestAnimationFrame) window.requestAnimationFrame = function (callback, element) {
         var currTime = new Date().getTime();
         var timeToCall = Math.max(0, 16 - (currTime - lastTime));
@@ -178,7 +178,7 @@ $(document).ready(function(){
         clearTimeout(id);
     };
 
-	
+
 });
 </script>
 </body>
